@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons start>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="ios-notifications-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <img class="image-profile" src="assets/userprofile.jpg" alt="">
+          </ion-col>
+          <ion-col col-9>Kanitthakan</ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="ios-settings-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="ios-calendar-outline" item-start></ion-icon>
+      Today
+    </ion-item>
+    <ion-item>
+      <ion-icon name="ios-calendar-outline" item-start>
+        <p class="custom-next7day">+7</p>
+      </ion-icon>
+      Next 7 Days
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <ion-segment [(ngModel)]="filter">
+      <ion-segment-button value="projects">
+        <label class="font-black">Projects</label>
+      </ion-segment-button>
+      <ion-segment-button class="font-black" value="filters">
+        <label class="font-black">Filters</label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="filter">
+    <ion-list *ngSwitchCase="'projects'">
+      <!-- <ion-item>
+        <ion-icon name="ios-paper" item-start></ion-icon>
+        Herbology
+      </ion-item> -->
+      <!-- <ul> -->
+      <!-- <ion-icon name="ios-paper" item-start></ion-icon> -->
+      <ul>
+        <!-- <li> -->
+        <ion-icon name="ios-paper" item-start></ion-icon>
+        1233
+        <ul>
+          <!-- <li> -->
+          <ion-icon name="ios-paper" item-start></ion-icon>sdfdfafs
+          <ul>
+            <!-- <li> -->
+            <ion-icon name="ios-paper" item-start></ion-icon>sdsada
+            <!-- </li> -->
+          </ul>
+          <!-- </li> -->
+        </ul>
+        <!-- </li> -->
+      </ul>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'filters'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
