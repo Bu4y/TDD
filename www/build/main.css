@@ -25218,3 +25218,8 @@ page-home .custom-next7day {
 page-home .font-black {
   color: black;
 }
+
+page-home .margin-top-20 {
+  margin-top: 20px;
+  margin-left: -20px;
+}
