@@ -25223,3 +25223,16 @@ page-home .margin-top-20 {
   margin-top: 20px;
   margin-left: -20px;
 }
+
+page-home [submenu] {
+  display: block;
+  padding-left: 60px;
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+
+page-home [submenu].visible {
+  max-height: 100%;
+}

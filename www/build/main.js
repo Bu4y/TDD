@@ -140,19 +140,40 @@ var HomePage = (function () {
     function HomePage(navCtrl) {
         this.navCtrl = navCtrl;
         this.filter = 'projects';
+        this.category = [];
+        for (var i = 20; i > 0; i--) {
+            var data = {
+                name: 'หมวดหมู่',
+                showSubmenu: false,
+                sub: [{
+                        name: 'หมวดหมู่ย่อย'
+                    },
+                    {
+                        name: 'หมวดหมู่ย่อย'
+                    },
+                    {
+                        name: 'หมวดหมู่ย่อย'
+                    }]
+            };
+            this.category.push(data);
+        }
     }
     HomePage.prototype.gotoLogin = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */]);
+    };
+    HomePage.prototype.menuItemHandler = function (index) {
+        this.showSubmenu = this.showSubmenu === index ? -1 : index;
     };
     return HomePage;
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\home\home.html"*/'<ion-header>\n  <ion-toolbar color="danger">\n    <ion-buttons start>\n      <button ion-button icon-only color="royal">\n        <ion-icon name="ios-notifications-outline"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-3>\n            <img class="image-profile" src="assets/userprofile.jpg" alt="">\n          </ion-col>\n          <ion-col col-9>Kanitthakan</ion-col>\n\n        </ion-row>\n      </ion-grid>\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only color="royal" (click)="gotoLogin()">\n        <ion-icon name="ios-settings-outline"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-item>\n      <ion-icon name="ios-calendar-outline" item-start></ion-icon>\n      Today\n      <p item-end>1</p>\n    </ion-item>\n    <ion-item>\n      <ion-icon name="ios-calendar-outline" item-start>\n        <p class="custom-next7day">+7</p>\n      </ion-icon>\n      Next 7 Days\n      <p item-end>7</p>      \n    </ion-item>\n  </ion-list>\n\n  <div padding>\n    <ion-segment [(ngModel)]="filter">\n      <ion-segment-button value="projects">\n        <label class="font-black">Projects</label>\n      </ion-segment-button>\n      <ion-segment-button class="font-black" value="filters">\n        <label class="font-black">Filters</label>\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n\n  <div [ngSwitch]="filter">\n    <ion-list *ngSwitchCase="\'projects\'">\n      <!-- <ion-item>\n        <ion-icon name="ios-paper" item-start></ion-icon>\n        Herbology\n      </ion-item> -->\n      <!-- <ul> -->\n      <!-- <ion-icon name="ios-paper" item-start></ion-icon> -->\n\n      <ul>\n        <!-- <li> -->\n\n        <ion-icon name="ios-paper" item-start></ion-icon>\n        1233\n        <ul class="margin-top-20">\n          <!-- <li> -->\n          <ion-grid>\n            <ion-row>\n              <ion-col col-11>\n                <ion-icon name="ios-paper" item-start></ion-icon> sdfdfafs\n              </ion-col>\n              <ion-col col-1></ion-col>\n\n            </ion-row>\n          </ion-grid>\n          <ul class="margin-top-20">\n            <ion-grid>\n              <ion-row>\n                <ion-col col-11>\n                  <ion-icon name="ios-paper" item-start></ion-icon> sdfdfafs\n                </ion-col>\n                <ion-col col-1>1</ion-col>\n\n              </ion-row>\n            </ion-grid>\n          </ul>\n          <!-- </li> -->\n        </ul>\n        <!-- </li> -->\n      </ul>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'filters\'">\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Assigned to me\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Assigned to others\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Priority 1\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Priority 2\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Priority 3\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Priority 4\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Priority 5\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        View all\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\home\home.html"*/'<ion-header>\n  <ion-toolbar color="danger">\n    <ion-buttons start>\n      <button ion-button icon-only color="royal">\n        <ion-icon name="ios-notifications-outline"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-3>\n            <img class="image-profile" src="assets/userprofile.jpg" alt="">\n          </ion-col>\n          <ion-col col-9>Kanitthakan</ion-col>\n\n        </ion-row>\n      </ion-grid>\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only color="royal" (click)="gotoLogin()">\n        <ion-icon name="ios-settings-outline"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-item>\n      <ion-icon name="ios-calendar-outline" item-start></ion-icon>\n      Today\n      <p item-end>1</p>\n    </ion-item>\n    <ion-item>\n      <ion-icon name="ios-calendar-outline" item-start>\n        <p class="custom-next7day">+7</p>\n      </ion-icon>\n      Next 7 Days\n      <p item-end>7</p>\n    </ion-item>\n  </ion-list>\n\n  <div padding>\n    <ion-segment [(ngModel)]="filter">\n      <ion-segment-button value="projects">\n        <label class="font-black">Projects</label>\n      </ion-segment-button>\n      <ion-segment-button class="font-black" value="filters">\n        <label class="font-black">Filters</label>\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n\n  <div [ngSwitch]="filter">\n    <ion-list *ngSwitchCase="\'projects\'">\n      <!-- <ion-item>\n        <ion-icon name="ios-paper" item-start></ion-icon>\n        Herbology\n      </ion-item> -->\n      <!-- <ul> -->\n      <!-- <ion-icon name="ios-paper" item-start></ion-icon> -->\n      <div *ngFor="let cate of category; let index = index;">\n        <button ion-item (click)="menuItemHandler(index)" [ngClass]="{\'active\' : showSubmenu === index}">{{cate.name}}\n          <!-- <ion-avatar item-start>\n            <img src="./assets/images/category.png">\n          </ion-avatar> -->\n        </button>\n        <ion-item-group submenu [class.visible]="showSubmenu === index" *ngFor="let sub of cate.sub">\n          <ion-item submenu-item menuClose> - {{sub.name}}</ion-item>\n        </ion-item-group>\n      </div>\n\n       \n\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'filters\'">\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Assigned to me\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Assigned to others\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Priority 1\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Priority 2\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Priority 3\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Priority 4\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        Priority 5\n      </ion-item>\n      <ion-item>\n        <ion-icon name="ios-clipboard-outline" item-start></ion-icon>\n        View all\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\home\home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object])
 ], HomePage);
 
+var _a;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
@@ -274,7 +295,15 @@ AppModule = __decorate([
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */]
+            __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */],
+            __WEBPACK_IMPORTED_MODULE_8__pages_today_today__["a" /* TodayPage */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_nextweek_nextweek__["a" /* NextweekPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_teacherselect_teacherselect__["a" /* TeacherselectPage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_teacherlist_teacherlist__["a" /* TeacherlistPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_newproject_newproject__["a" /* NewprojectPage */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_masterplan_masterplan__["a" /* MasterplanPage */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_parents_parents__["a" /* ParentsPage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_filter_filter__["a" /* FilterPage */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
@@ -306,7 +335,7 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_newproject_newproject__ = __webpack_require__(279);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -323,7 +352,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var MyApp = (function () {
     function MyApp(platform, statusBar, splashScreen) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_newproject_newproject__["a" /* NewprojectPage */];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -336,9 +365,10 @@ var MyApp = (function () {
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\app\app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object])
 ], MyApp);
 
+var _a, _b, _c;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -681,7 +711,7 @@ var MasterplanPage = (function () {
 MasterplanPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-masterplan',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\masterplan\masterplan.html"*/'<!--\n  Generated template for the MasterplanPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>masterplan</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\masterplan\masterplan.html"*/,
+        selector: 'page-masterplan',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\masterplan\masterplan.html"*/'<!--\n  Generated template for the MasterplanPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>masterplan</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\masterplan\masterplan.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], MasterplanPage);
@@ -727,7 +757,7 @@ var NewprojectPage = (function () {
 NewprojectPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-newproject',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\newproject\newproject.html"*/'<!--\n  Generated template for the NewprojectPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>newproject</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\newproject\newproject.html"*/,
+        selector: 'page-newproject',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\newproject\newproject.html"*/'<!--\n  Generated template for the NewprojectPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>newproject</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\newproject\newproject.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], NewprojectPage);
@@ -773,7 +803,7 @@ var NextweekPage = (function () {
 NextweekPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-nextweek',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\nextweek\nextweek.html"*/'<!--\n  Generated template for the NextweekPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>nextweek</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\nextweek\nextweek.html"*/,
+        selector: 'page-nextweek',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\nextweek\nextweek.html"*/'<!--\n  Generated template for the NextweekPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>nextweek</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\nextweek\nextweek.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], NextweekPage);
@@ -819,7 +849,7 @@ var TeacherlistPage = (function () {
 TeacherlistPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-teacherlist',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\teacherlist\teacherlist.html"*/'<!--\n  Generated template for the TeacherlistPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>teacherlist</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\teacherlist\teacherlist.html"*/,
+        selector: 'page-teacherlist',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\teacherlist\teacherlist.html"*/'<!--\n  Generated template for the TeacherlistPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>teacherlist</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\teacherlist\teacherlist.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], TeacherlistPage);
@@ -865,7 +895,7 @@ var TeacherselectPage = (function () {
 TeacherselectPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-teacherselect',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\teacherselect\teacherselect.html"*/'<!--\n  Generated template for the TeacherselectPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>teacherselect</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\teacherselect\teacherselect.html"*/,
+        selector: 'page-teacherselect',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\teacherselect\teacherselect.html"*/'<!--\n  Generated template for the TeacherselectPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>teacherselect</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\teacherselect\teacherselect.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], TeacherselectPage);
@@ -911,7 +941,7 @@ var TodayPage = (function () {
 TodayPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-today',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\today\today.html"*/'<!--\n  Generated template for the TodayPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>today</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\today\today.html"*/,
+        selector: 'page-today',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\today\today.html"*/'<!--\n  Generated template for the TodayPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>today</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\today\today.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], TodayPage);
@@ -957,7 +987,7 @@ var ParentsPage = (function () {
 ParentsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-parents',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\parents\parents.html"*/'<!--\n  Generated template for the ParentsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>parents</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\parents\parents.html"*/,
+        selector: 'page-parents',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\parents\parents.html"*/'<!--\n  Generated template for the ParentsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>parents</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\parents\parents.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], ParentsPage);
@@ -1046,7 +1076,7 @@ var FilterPage = (function () {
 FilterPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-filter',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\filter\filter.html"*/'<!--\n  Generated template for the FilterPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>filter</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\filter\filter.html"*/,
+        selector: 'page-filter',template:/*ion-inline-start:"D:\C@net\TDD\TDD\src\pages\filter\filter.html"*/'<!--\n  Generated template for the FilterPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>filter</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\C@net\TDD\TDD\src\pages\filter\filter.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], FilterPage);

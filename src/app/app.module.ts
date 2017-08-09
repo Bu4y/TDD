@@ -50,7 +50,15 @@ import { FilterServiceProvider } from '../pages/filter/filter-service';
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    TodayPage,
+    NextweekPage,
+    TeacherselectPage,
+    TeacherlistPage,
+    NewprojectPage,
+    MasterplanPage,
+    ParentsPage,
+    FilterPage
   ],
   providers: [
     StatusBar,

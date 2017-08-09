@@ -36,7 +36,7 @@
         <p class="custom-next7day">+7</p>
       </ion-icon>
       Next 7 Days
-      <p item-end>7</p>      
+      <p item-end>7</p>
     </ion-item>
   </ion-list>
 
@@ -59,38 +59,19 @@
       </ion-item> -->
       <!-- <ul> -->
       <!-- <ion-icon name="ios-paper" item-start></ion-icon> -->
+      <div *ngFor="let cate of category; let index = index;">
+        <button ion-item (click)="menuItemHandler(index)" [ngClass]="{'active' : showSubmenu === index}">{{cate.name}}
+          <!-- <ion-avatar item-start>
+            <img src="./assets/images/category.png">
+          </ion-avatar> -->
+        </button>
+        <ion-item-group submenu [class.visible]="showSubmenu === index" *ngFor="let sub of cate.sub">
+          <ion-item submenu-item menuClose> - {{sub.name}}</ion-item>
+        </ion-item-group>
+      </div>
 
-      <ul>
-        <!-- <li> -->
+       
 
-        <ion-icon name="ios-paper" item-start></ion-icon>
-        1233
-        <ul class="margin-top-20">
-          <!-- <li> -->
-          <ion-grid>
-            <ion-row>
-              <ion-col col-11>
-                <ion-icon name="ios-paper" item-start></ion-icon> sdfdfafs
-              </ion-col>
-              <ion-col col-1></ion-col>
-
-            </ion-row>
-          </ion-grid>
-          <ul class="margin-top-20">
-            <ion-grid>
-              <ion-row>
-                <ion-col col-11>
-                  <ion-icon name="ios-paper" item-start></ion-icon> sdfdfafs
-                </ion-col>
-                <ion-col col-1>1</ion-col>
-
-              </ion-row>
-            </ion-grid>
-          </ul>
-          <!-- </li> -->
-        </ul>
-        <!-- </li> -->
-      </ul>
     </ion-list>
 
     <ion-list *ngSwitchCase="'filters'">
