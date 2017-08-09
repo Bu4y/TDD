@@ -12,8 +12,6 @@ import { NextweekPage } from "../pages/nextweek/nextweek";
 import { TeacherselectPage } from "../pages/teacherselect/teacherselect";
 import { TeacherlistPage } from "../pages/teacherlist/teacherlist";
 import { NewprojectPage } from "../pages/newproject/newproject";
-import { MasterplanPage } from "../pages/masterplan/masterplan";
-import { ParentsPage } from "../pages/parents/parents";
 import { FilterPage } from "../pages/filter/filter";
 
 import { LoginServiceProvider } from '../pages/login/login-service';
@@ -22,8 +20,6 @@ import { NextweekServiceProvider } from '../pages/nextweek/nextweek-service';
 import { TeacherselectServiceProvider } from '../pages/teacherselect/teacherselect-service';
 import { TeacherlistServiceProvider } from '../pages/teacherlist/teacherlist-service';
 import { NewprojectServiceProvider } from '../pages/newproject/newproject-service';
-import { MasterplanServiceProvider } from '../pages/masterplan/masterplan-service';
-import { ParentsServiceProvider } from '../pages/parents/parents-service';
 import { FilterServiceProvider } from '../pages/filter/filter-service';
 
 @NgModule({
@@ -36,8 +32,6 @@ import { FilterServiceProvider } from '../pages/filter/filter-service';
     TeacherselectPage,
     TeacherlistPage,
     NewprojectPage,
-    MasterplanPage,
-    ParentsPage,
     FilterPage
   ],
   imports: [
@@ -56,8 +50,6 @@ import { FilterServiceProvider } from '../pages/filter/filter-service';
     TeacherselectPage,
     TeacherlistPage,
     NewprojectPage,
-    MasterplanPage,
-    ParentsPage,
     FilterPage
   ],
   providers: [
@@ -70,8 +62,6 @@ import { FilterServiceProvider } from '../pages/filter/filter-service';
     TeacherselectServiceProvider,
     TeacherlistServiceProvider,
     NewprojectServiceProvider,
-    MasterplanServiceProvider,
-    ParentsServiceProvider,
     FilterServiceProvider
   ]
 })
