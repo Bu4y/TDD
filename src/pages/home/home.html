@@ -59,19 +59,22 @@
       </ion-item> -->
       <!-- <ul> -->
       <!-- <ion-icon name="ios-paper" item-start></ion-icon> -->
-      <div *ngFor="let cate of category; let index = index;">
-        <button ion-item (click)="menuItemHandler(index)" [ngClass]="{'active' : showSubmenu === index}">{{cate.name}}
-          <!-- <ion-avatar item-start>
-            <img src="./assets/images/category.png">
-          </ion-avatar> -->
+      <div *ngFor="let object of category; let index = index;">
+        <button ion-item (click)="menuItemHandler(object,object)" [ngClass]="{'active' : showSubmenu === index}"><ion-icon name="ios-paper" item-start></ion-icon> {{object.name}}
         </button>
-        <ion-item-group submenu [class.visible]="showSubmenu === index" *ngFor="let sub of cate.sub">
-          <ion-item submenu-item menuClose> - {{sub.name}}</ion-item>
+        <ion-item-group submenu [class.visible]="object.showSubmenu === true" *ngFor="let sub of object.sub">
+          <ion-item submenu-item menuClose (click)="menuItemHandler(sub,object)">
+            <ion-icon name="ios-paper" item-start></ion-icon> {{sub.name}}</ion-item>
+          <ion-item-group submenu [class.visible]="sub.showSubmenu === true" *ngFor="let v1 of sub.sub">
+            <ion-item submenu-item menuClose (click)="menuItemHandler(v1,object)">
+              <ion-icon name="ios-paper" item-start></ion-icon> {{v1.name}}</ion-item>
+            <ion-item-group submenu [class.visible]="v1.showSubmenu === true" *ngFor="let v2 of v1.sub">
+              <ion-item submenu-item menuClose>
+                <ion-icon name="ios-paper" item-start></ion-icon> {{v2.name}}</ion-item>
+            </ion-item-group>
+          </ion-item-group>
         </ion-item-group>
       </div>
-
-       
-
     </ion-list>
 
     <ion-list *ngSwitchCase="'filters'">
