@@ -25226,7 +25226,7 @@ page-home .margin-top-20 {
 
 page-home [submenu] {
   display: block;
-  padding-left: 60px;
+  padding-left: 30px;
   overflow: hidden;
   max-height: 0;
   -webkit-transform-origin: 50% 0;
