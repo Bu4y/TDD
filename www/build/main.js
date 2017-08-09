@@ -115,39 +115,31 @@ webpackEmptyAsyncContext.id = 110;
 var map = {
 	"../pages/filter/filter.module": [
 		289,
-		8
+		17
 	],
 	"../pages/login/login.module": [
 		281,
-		7
-	],
-	"../pages/masterplan/masterplan.module": [
-		287,
-		6
+		16
 	],
 	"../pages/newproject/newproject.module": [
 		286,
-		5
+		15
 	],
 	"../pages/nextweek/nextweek.module": [
 		285,
-		4
-	],
-	"../pages/parents/parents.module": [
-		288,
-		3
+		14
 	],
 	"../pages/teacherlist/teacherlist.module": [
 		283,
-		2
+		13
 	],
 	"../pages/teacherselect/teacherselect.module": [
 		282,
-		1
+		12
 	],
 	"../pages/today/today.module": [
 		284,
-		0
+		11
 	]
 };
 function webpackAsyncContext(req) {
@@ -341,104 +333,12 @@ var NewprojectPage = (function () {
 NewprojectPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-newproject',template:/*ion-inline-start:"C:\Users\Ero\Desktop\TDD\TDD\src\pages\newproject\newproject.html"*/'<!--\n\n  Generated template for the NewprojectPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>newproject</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Ero\Desktop\TDD\TDD\src\pages\newproject\newproject.html"*/,
+        selector: 'page-newproject',template:/*ion-inline-start:"C:\Users\Ero\Desktop\TDD\TDD\src\pages\newproject\newproject.html"*/'<!--\n\n  Generated template for the NewprojectPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>Newproject</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n\n\n  <ion-item >\n\n    <ion-label stacked color="danger" >Name</ion-label>\n\n    <ion-input type="text" color="danger"></ion-input>\n\n  </ion-item>\n\n\n\n  <!-- MasterPlan -->\n\n  <ion-item>\n\n   <ion-label stacked color="danger">MasterPlan</ion-label>\n\n  <ion-select [(ngModel)]="MasterPlan">\n\n    <ion-option value="f">1</ion-option>\n\n    <ion-option value="m">2</ion-option>\n\n    <ion-option value="n">3</ion-option>\n\n  </ion-select>\n\n  </ion-item>\n\n\n\n  <!-- Teacher -->\n\n<ion-item>\n\n   <ion-label stacked color="danger">Teacher</ion-label>\n\n  <ion-select [(ngModel)]="Teacher">\n\n    <ion-option value="f">บ๊วย</ion-option>\n\n    <ion-option value="m">พิ้งค์</ion-option>\n\n    <ion-option value="n">แหม่ม</ion-option>\n\n  </ion-select>\n\n  </ion-item>\n\n\n\n  <!--Add collaborators  -->\n\n<ion-item>\n\n   <ion-label stacked color="danger" >Collaborators</ion-label>\n\n    <ion-input type="text" color="danger"></ion-input>\n\n</ion-item>\n\n\n\n\n\n</ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Ero\Desktop\TDD\TDD\src\pages\newproject\newproject.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], NewprojectPage);
 
 //# sourceMappingURL=newproject.js.map
-
-/***/ }),
-
-/***/ 200:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MasterplanPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the MasterplanPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var MasterplanPage = (function () {
-    function MasterplanPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    MasterplanPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad MasterplanPage');
-    };
-    return MasterplanPage;
-}());
-MasterplanPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-masterplan',template:/*ion-inline-start:"C:\Users\Ero\Desktop\TDD\TDD\src\pages\masterplan\masterplan.html"*/'<!--\n\n  Generated template for the MasterplanPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>masterplan</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Ero\Desktop\TDD\TDD\src\pages\masterplan\masterplan.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-], MasterplanPage);
-
-//# sourceMappingURL=masterplan.js.map
-
-/***/ }),
-
-/***/ 201:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ParentsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the ParentsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var ParentsPage = (function () {
-    function ParentsPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    ParentsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ParentsPage');
-    };
-    return ParentsPage;
-}());
-ParentsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-parents',template:/*ion-inline-start:"C:\Users\Ero\Desktop\TDD\TDD\src\pages\parents\parents.html"*/'<!--\n\n  Generated template for the ParentsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>parents</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Ero\Desktop\TDD\TDD\src\pages\parents\parents.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-], ParentsPage);
-
-//# sourceMappingURL=parents.js.map
 
 /***/ }),
 
@@ -479,7 +379,7 @@ var FilterPage = (function () {
 FilterPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-filter',template:/*ion-inline-start:"C:\Users\Ero\Desktop\TDD\TDD\src\pages\filter\filter.html"*/'<!--\n\n  Generated template for the FilterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>filter</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Ero\Desktop\TDD\TDD\src\pages\filter\filter.html"*/,
+        selector: 'page-filter',template:/*ion-inline-start:"C:\Users\Ero\Desktop\TDD\TDD\src\pages\filter\filter.html"*/'<!--\n\n  Generated template for the FilterPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="danger">\n\n    <ion-title>filter</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<ion-list>\n\n\n\n\n\n  <!-- item1 -->\n\n  <ion-item>\n\n    <ion-avatar item-start>\n\n      <img src="img/avatar-finn.png">\n\n    </ion-avatar>\n\n    <h2>test projectI</h2>\n\n    <h3>descriptionI</h3>\n\n    <p>times</p>\n\n  </ion-item>\n\n\n\n<!-- item2 -->\n\n   <ion-item>\n\n    <ion-avatar item-start>\n\n      <img src="img/avatar-finn.png">\n\n    </ion-avatar>\n\n    <h2>test projectII</h2>\n\n    <h3>descriptionII</h3>\n\n    <p>times</p>\n\n  </ion-item>\n\n\n\n\n\n \n\n\n\n\n\n\n\n</ion-list>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Ero\Desktop\TDD\TDD\src\pages\filter\filter.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], FilterPage);
@@ -520,28 +420,20 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_teacherselect_teacherselect__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_teacherlist_teacherlist__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_newproject_newproject__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_masterplan_masterplan__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_parents_parents__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_filter_filter__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_login_login_service__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_today_today_service__ = __webpack_require__(273);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_nextweek_nextweek_service__ = __webpack_require__(274);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_teacherselect_teacherselect_service__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_teacherlist_teacherlist_service__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_newproject_newproject_service__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_masterplan_masterplan_service__ = __webpack_require__(278);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_parents_parents_service__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_filter_filter_service__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_filter_filter__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_login_login_service__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_today_today_service__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_nextweek_nextweek_service__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_teacherselect_teacherselect_service__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_teacherlist_teacherlist_service__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_newproject_newproject_service__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_filter_filter_service__ = __webpack_require__(280);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
 
 
 
@@ -579,9 +471,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10__pages_teacherselect_teacherselect__["a" /* TeacherselectPage */],
             __WEBPACK_IMPORTED_MODULE_11__pages_teacherlist_teacherlist__["a" /* TeacherlistPage */],
             __WEBPACK_IMPORTED_MODULE_12__pages_newproject_newproject__["a" /* NewprojectPage */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_masterplan_masterplan__["a" /* MasterplanPage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_parents_parents__["a" /* ParentsPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_filter_filter__["a" /* FilterPage */]
+            __WEBPACK_IMPORTED_MODULE_13__pages_filter_filter__["a" /* FilterPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -595,8 +485,6 @@ AppModule = __decorate([
                     { loadChildren: '../pages/today/today.module#TodayPageModule', name: 'TodayPage', segment: 'today', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/nextweek/nextweek.module#NextweekPageModule', name: 'NextweekPage', segment: 'nextweek', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/newproject/newproject.module#NewprojectPageModule', name: 'NewprojectPage', segment: 'newproject', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/masterplan/masterplan.module#MasterplanPageModule', name: 'MasterplanPage', segment: 'masterplan', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/parents/parents.module#ParentsPageModule', name: 'ParentsPage', segment: 'parents', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/filter/filter.module#FilterPageModule', name: 'FilterPage', segment: 'filter', priority: 'low', defaultHistory: [] }
                 ]
             })
@@ -611,23 +499,19 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10__pages_teacherselect_teacherselect__["a" /* TeacherselectPage */],
             __WEBPACK_IMPORTED_MODULE_11__pages_teacherlist_teacherlist__["a" /* TeacherlistPage */],
             __WEBPACK_IMPORTED_MODULE_12__pages_newproject_newproject__["a" /* NewprojectPage */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_masterplan_masterplan__["a" /* MasterplanPage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_parents_parents__["a" /* ParentsPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_filter_filter__["a" /* FilterPage */]
+            __WEBPACK_IMPORTED_MODULE_13__pages_filter_filter__["a" /* FilterPage */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
             { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
-            __WEBPACK_IMPORTED_MODULE_16__pages_login_login_service__["a" /* LoginServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_today_today_service__["a" /* TodayServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_nextweek_nextweek_service__["a" /* NextweekServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_teacherselect_teacherselect_service__["a" /* TeacherselectServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_teacherlist_teacherlist_service__["a" /* TeacherlistServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_newproject_newproject_service__["a" /* NewprojectServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_masterplan_masterplan_service__["a" /* MasterplanServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_parents_parents_service__["a" /* ParentsServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_filter_filter_service__["a" /* FilterServiceProvider */]
+            __WEBPACK_IMPORTED_MODULE_14__pages_login_login_service__["a" /* LoginServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_today_today_service__["a" /* TodayServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_nextweek_nextweek_service__["a" /* NextweekServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_teacherselect_teacherselect_service__["a" /* TeacherselectServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_teacherlist_teacherlist_service__["a" /* TeacherlistServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_newproject_newproject_service__["a" /* NewprojectServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_20__pages_filter_filter_service__["a" /* FilterServiceProvider */]
         ]
     })
 ], AppModule);
@@ -999,92 +883,6 @@ NewprojectServiceProvider = __decorate([
 ], NewprojectServiceProvider);
 
 //# sourceMappingURL=newproject-service.js.map
-
-/***/ }),
-
-/***/ 278:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MasterplanServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/*
-  Generated class for the MasterplanServiceProvider provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
-var MasterplanServiceProvider = (function () {
-    function MasterplanServiceProvider(http) {
-        this.http = http;
-        console.log('Hello MasterplanServiceProvider Provider');
-    }
-    return MasterplanServiceProvider;
-}());
-MasterplanServiceProvider = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
-], MasterplanServiceProvider);
-
-//# sourceMappingURL=masterplan-service.js.map
-
-/***/ }),
-
-/***/ 279:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ParentsServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/*
-  Generated class for the ParentsServiceProvider provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
-var ParentsServiceProvider = (function () {
-    function ParentsServiceProvider(http) {
-        this.http = http;
-        console.log('Hello ParentsServiceProvider Provider');
-    }
-    return ParentsServiceProvider;
-}());
-ParentsServiceProvider = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
-], ParentsServiceProvider);
-
-//# sourceMappingURL=parents-service.js.map
 
 /***/ }),
 

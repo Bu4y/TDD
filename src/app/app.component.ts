@@ -4,10 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { TeacherselectPage } from '../pages/teacherselect/teacherselect';
-import { TeacherlistPage } from '../pages/teacherlist/teacherlist';
-import { TodayPage } from '../pages/today/today';
-import { NextweekPage } from '../pages/nextweek/nextweek';
 @Component({
   templateUrl: 'app.html'
 })

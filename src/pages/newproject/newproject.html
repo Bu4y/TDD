@@ -7,12 +7,46 @@
 <ion-header>
 
   <ion-navbar color="danger">
-    <ion-title>newproject</ion-title>
+    <ion-title>Newproject</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list>
 
+  <ion-item >
+    <ion-label stacked color="danger" >Name</ion-label>
+    <ion-input type="text" color="danger"></ion-input>
+  </ion-item>
+
+  <!-- MasterPlan -->
+  <ion-item>
+   <ion-label stacked color="danger">MasterPlan</ion-label>
+  <ion-select [(ngModel)]="MasterPlan">
+    <ion-option value="f">1</ion-option>
+    <ion-option value="m">2</ion-option>
+    <ion-option value="n">3</ion-option>
+  </ion-select>
+  </ion-item>
+
+  <!-- Teacher -->
+<ion-item>
+   <ion-label stacked color="danger">Teacher</ion-label>
+  <ion-select [(ngModel)]="Teacher">
+    <ion-option value="f">บ๊วย</ion-option>
+    <ion-option value="m">พิ้งค์</ion-option>
+    <ion-option value="n">แหม่ม</ion-option>
+  </ion-select>
+  </ion-item>
+
+  <!--Add collaborators  -->
+<ion-item>
+   <ion-label stacked color="danger" >Collaborators</ion-label>
+    <ion-input type="text" color="danger"></ion-input>
+</ion-item>
+
+
+</ion-list>
 </ion-content>
