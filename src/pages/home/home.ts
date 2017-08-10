@@ -4,6 +4,8 @@ import { NavController } from 'ionic-angular';
 import { LoginPage } from "../login/login";
 import { TodayPage } from "../today/today";
 import { NextweekPage } from "../nextweek/nextweek";
+import { NewprojectPage } from "../newproject/newproject";
+import { FilterPage } from "../filter/filter";
 
 @Component({
   selector: 'page-home',
@@ -37,17 +39,47 @@ export class HomePage {
       }]
     }
     this.category.push(data);
+    // let data = [{
+    //   name: 'หมวดหมู่ใหญ่1',
+    //   accno: 10000,
+    //   parent: null
+    // }, {
+    //   name: 'หมวดหมู่ใหญ่2',
+    //   accno: 20000,
+    //   parent: null
+    // }, {
+    //   name: 'หมวดหมู่ใหญ่1-1',
+    //   accno: 11000,
+    //   parent: 10000
+    // }, {
+    //   name: 'หมวดหมู่ใหญ่1-1-1',
+    //   accno: 11100,
+    //   parent: 11000
+    // }, {
+    //   name: 'หมวดหมู่ใหญ่1-1-1-1',
+    //   accno: 11110,
+    //   parent: 11100
+    // }]
+    // this.category = data;
   }
   gotoLogin() {
     this.navCtrl.push(LoginPage);
   }
 
-  today(){
+  today() {
     this.navCtrl.push(TodayPage);
   }
 
-  nextweek(){
+  nextweek() {
     this.navCtrl.push(NextweekPage);
+  }
+
+  newproject() {
+    this.navCtrl.push(NewprojectPage);
+  }
+
+  filterpage(title) {
+    this.navCtrl.push(FilterPage, { title: title });
   }
 
   menuItemHandler(item, object) {

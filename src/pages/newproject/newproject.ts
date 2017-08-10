@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 /**
  * Generated class for the NewprojectPage page.
  *
@@ -20,6 +19,10 @@ export class NewprojectPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewprojectPage');
+  }
+
+  gohome(){
+    this.navCtrl.pop();
   }
 
 }

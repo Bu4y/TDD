@@ -14,12 +14,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'filter.html',
 })
 export class FilterPage {
+  title: string = 'filter';
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.title = this.navParams.get('title');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FilterPage');
   }
+
 
 }

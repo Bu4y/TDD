@@ -56,6 +56,20 @@
       <div *ngFor="let object of category; let index = index;">
         <button ion-item (click)="menuItemHandler(object,object)" [ngClass]="{'active' : showSubmenu === true}"><ion-icon name="ios-paper" item-start></ion-icon> {{object.name}}
         </button>
+        <!-- <div *ngFor="let sub of category;">
+          <ion-item-group submenu [class.visible]="true" *ngIf="sub.parent == object.accno">
+            <ion-item submenu-item menuClose>
+              <ion-icon name="ios-paper" item-start></ion-icon> {{sub.name}}
+            </ion-item>
+             <div *ngFor="let subsub of category;">
+              <ion-item-group submenu [class.visible]="true" *ngIf="subsub.parent === sub.accno">
+                <ion-item submenu-item menuClose>
+                  <ion-icon name="ios-paper" item-start></ion-icon> {{subsub.name}}
+                </ion-item>
+              </ion-item-group>
+            </div> 
+          </ion-item-group>
+        </div>  -->
         <ion-item-group submenu [class.visible]="object.showSubmenu === true" *ngFor="let sub of object.sub">
           <ion-item submenu-item menuClose (click)="menuItemHandler(sub,object)">
             <ion-icon name="ios-paper" item-start></ion-icon> {{sub.name}}
@@ -72,41 +86,41 @@
         </ion-item-group>
       </div>
 
-      <ion-fab left bottom>
+      <ion-fab left bottom (click)="newproject()">
         <button ion-fab><ion-icon name="add"></ion-icon></button>
       </ion-fab>
     </ion-list>
 
     <ion-list *ngSwitchCase="'filters'">
-      <ion-item>
+      <ion-item (click)="filterpage('Assigned to me')">
         <ion-icon name="ios-clipboard-outline" item-start></ion-icon>
         Assigned to me
       </ion-item>
-      <ion-item>
+      <ion-item (click)="filterpage('Assigned to others')">
         <ion-icon name="ios-clipboard-outline" item-start></ion-icon>
         Assigned to others
       </ion-item>
-      <ion-item>
+      <ion-item (click)="filterpage('Priority 1')">
         <ion-icon name="ios-clipboard-outline" item-start></ion-icon>
         Priority 1
       </ion-item>
-      <ion-item>
+      <ion-item (click)="filterpage('Priority 2')">
         <ion-icon name="ios-clipboard-outline" item-start></ion-icon>
         Priority 2
       </ion-item>
-      <ion-item>
+      <ion-item (click)="filterpage('Priority 3')">
         <ion-icon name="ios-clipboard-outline" item-start></ion-icon>
         Priority 3
       </ion-item>
-      <ion-item>
+      <ion-item (click)="filterpage('Priority 4')">
         <ion-icon name="ios-clipboard-outline" item-start></ion-icon>
         Priority 4
       </ion-item>
-      <ion-item>
+      <ion-item (click)="filterpage('Priority 5')">
         <ion-icon name="ios-clipboard-outline" item-start></ion-icon>
         Priority 5
       </ion-item>
-      <ion-item>
+      <ion-item (click)="filterpage('View all')">
         <ion-icon name="ios-clipboard-outline" item-start></ion-icon>
         View all
       </ion-item>
