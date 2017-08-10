@@ -21,6 +21,7 @@ import { TeacherselectServiceProvider } from '../pages/teacherselect/teachersele
 import { TeacherlistServiceProvider } from '../pages/teacherlist/teacherlist-service';
 import { NewprojectServiceProvider } from '../pages/newproject/newproject-service';
 import { FilterServiceProvider } from '../pages/filter/filter-service';
+import { RegisterPage } from "../pages/register/register";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FilterServiceProvider } from '../pages/filter/filter-service';
     TeacherselectPage,
     TeacherlistPage,
     NewprojectPage,
-    FilterPage
+    FilterPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { FilterServiceProvider } from '../pages/filter/filter-service';
     TeacherselectPage,
     TeacherlistPage,
     NewprojectPage,
-    FilterPage
+    FilterPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
