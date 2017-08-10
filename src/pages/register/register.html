@@ -6,13 +6,54 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>register</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="bg-red">
+  <ion-list  padding>
+
+  <ion-item>
+    <ion-label floating>Fastname</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Lastname</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+<ion-item>
+    <ion-label floating>Tel</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+<ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+  <ion-row>
+      <ion-col col-6>
+        <button ion-button block outline color="light">Submit</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button block outline color="light">Cancel</button>
+      </ion-col>
+    </ion-row>
+
 
 </ion-content>

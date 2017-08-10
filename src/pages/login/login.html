@@ -6,12 +6,60 @@
 -->
 
 <ion-header>
-  <ion-navbar color="danger">
+  <!-- <ion-navbar color="danger">
     <ion-title>login</ion-title>
-  </ion-navbar>
+  </ion-navbar> -->
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="bg-red">
+  <ion-slides pager class="height-350">
+
+
+    <ion-slide>
+      <h2>Slide 1</h2>
+
+    </ion-slide>
+
+    <ion-slide>
+      <h2>Slide 2</h2>
+    </ion-slide>
+
+    <ion-slide>
+      <h2>Slide 3</h2>
+    </ion-slide>
+
+  </ion-slides>
+  
+  <ion-grid padding>
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label>Username</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button block outline color="light">Login</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button block outline color="light">Register</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <button ion-button block outline color="light">Login with Facebook</button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
 
 </ion-content>
