@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { LoginPage } from "../login/login";
+import { TodayPage } from "../today/today";
+import { NextweekPage } from "../nextweek/nextweek";
 
 @Component({
   selector: 'page-home',
@@ -38,6 +40,14 @@ export class HomePage {
   }
   gotoLogin() {
     this.navCtrl.push(LoginPage);
+  }
+
+  today(){
+    this.navCtrl.push(TodayPage);
+  }
+
+  nextweek(){
+    this.navCtrl.push(NextweekPage);
   }
 
   menuItemHandler(item, object) {

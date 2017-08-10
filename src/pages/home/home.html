@@ -26,12 +26,12 @@
 
 <ion-content>
   <ion-list>
-    <ion-item>
+    <ion-item (click)="today()">
       <ion-icon name="ios-calendar-outline" item-start></ion-icon>
       Today
       <p item-end>1</p>
     </ion-item>
-    <ion-item>
+    <ion-item (click)="nextweek()">
       <ion-icon name="ios-calendar-outline" item-start>
         <p class="custom-next7day">+7</p>
       </ion-icon>
@@ -53,18 +53,14 @@
 
   <div [ngSwitch]="filter">
     <ion-list *ngSwitchCase="'projects'">
-      <!-- <ion-item>
-        <ion-icon name="ios-paper" item-start></ion-icon>
-        Herbology
-      </ion-item> -->
-      <!-- <ul> -->
-      <!-- <ion-icon name="ios-paper" item-start></ion-icon> -->
       <div *ngFor="let object of category; let index = index;">
-        <button ion-item (click)="menuItemHandler(object,object)" [ngClass]="{'active' : showSubmenu === index}"><ion-icon name="ios-paper" item-start></ion-icon> {{object.name}}
+        <button ion-item (click)="menuItemHandler(object,object)" [ngClass]="{'active' : showSubmenu === true}"><ion-icon name="ios-paper" item-start></ion-icon> {{object.name}}
         </button>
         <ion-item-group submenu [class.visible]="object.showSubmenu === true" *ngFor="let sub of object.sub">
           <ion-item submenu-item menuClose (click)="menuItemHandler(sub,object)">
-            <ion-icon name="ios-paper" item-start></ion-icon> {{sub.name}}</ion-item>
+            <ion-icon name="ios-paper" item-start></ion-icon> {{sub.name}}
+          </ion-item>
+
           <ion-item-group submenu [class.visible]="sub.showSubmenu === true" *ngFor="let v1 of sub.sub">
             <ion-item submenu-item menuClose (click)="menuItemHandler(v1,object)">
               <ion-icon name="ios-paper" item-start></ion-icon> {{v1.name}}</ion-item>
@@ -75,6 +71,10 @@
           </ion-item-group>
         </ion-item-group>
       </div>
+
+      <ion-fab left bottom>
+        <button ion-fab><ion-icon name="add"></ion-icon></button>
+      </ion-fab>
     </ion-list>
 
     <ion-list *ngSwitchCase="'filters'">
