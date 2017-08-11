@@ -17,6 +17,9 @@ import { TeacherselectPage } from "../pages/teacherselect/teacherselect";
 import { TeacherlistPage } from "../pages/teacherlist/teacherlist";
 import { NewprojectPage } from "../pages/newproject/newproject";
 import { FilterPage } from "../pages/filter/filter";
+import { ProfilePage } from "../pages/profile/profile";
+import { NotiPage } from "../pages/noti/noti";
+import { SettingPage } from "../pages/setting/setting";
 
 import { LoginServiceProvider } from '../pages/login/login-service';
 import { TodayServiceProvider } from '../pages/today/today-service';
@@ -29,6 +32,9 @@ import { RegisterPage } from "../pages/register/register";
 import { UiTreeComponent } from "../components/ui-tree/ui-tree";
 import { RegisterServiceProvider } from '../pages/register/register-service';
 import { HomeServiceProvider } from '../pages/home/home-service';
+import { ProfileServiceProvider } from '../pages/profile/profile-service';
+import { NotiServiceProvider } from '../pages/noti/noti-service';
+import { SettingServiceProvider } from '../pages/setting/setting-service';
 
 @NgModule({
   declarations: [
@@ -42,7 +48,10 @@ import { HomeServiceProvider } from '../pages/home/home-service';
     NewprojectPage,
     FilterPage,
     RegisterPage,
-    UiTreeComponent
+    UiTreeComponent,
+    ProfilePage,
+    NotiPage,
+    SettingPage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +72,10 @@ import { HomeServiceProvider } from '../pages/home/home-service';
     NewprojectPage,
     FilterPage,
     RegisterPage,
-    UiTreeComponent
+    UiTreeComponent,
+    ProfilePage,
+    NotiPage,
+    SettingPage
   ],
   providers: [
     StatusBar,
@@ -77,7 +89,10 @@ import { HomeServiceProvider } from '../pages/home/home-service';
     NewprojectServiceProvider,
     FilterServiceProvider,
     RegisterServiceProvider,
-    HomeServiceProvider
+    HomeServiceProvider,
+    ProfileServiceProvider,
+    NotiServiceProvider,
+    SettingServiceProvider
   ]
 })
 export class AppModule { }
