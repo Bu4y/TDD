@@ -27,6 +27,7 @@ import { NewprojectServiceProvider } from '../pages/newproject/newproject-servic
 import { FilterServiceProvider } from '../pages/filter/filter-service';
 import { RegisterPage } from "../pages/register/register";
 import { UiTreeComponent } from "../components/ui-tree/ui-tree";
+import { RegisterServiceProvider } from '../pages/register/register-service';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { UiTreeComponent } from "../components/ui-tree/ui-tree";
     TeacherselectServiceProvider,
     TeacherlistServiceProvider,
     NewprojectServiceProvider,
-    FilterServiceProvider
+    FilterServiceProvider,
+    RegisterServiceProvider
   ]
 })
 export class AppModule { }

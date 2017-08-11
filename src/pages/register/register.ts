@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 
 import { LoginPage } from "../login/login";
+import { registerModel } from "./register-model";
 /**
  * Generated class for the RegisterPage page.
  *
@@ -15,15 +16,22 @@ import { LoginPage } from "../login/login";
   templateUrl: 'register.html',
 })
 export class RegisterPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  regit: registerModel = new registerModel();
+  loading: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+    this.loading = this.loadingCtrl.create();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
 
-  login(){
+  regiter() {
+    // alert(JSON.stringify(this.regit));
+    this.navCtrl.push(LoginPage);
+  }
+
+  cancel() {
     this.navCtrl.push(LoginPage);
   }
 
