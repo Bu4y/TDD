@@ -13,55 +13,106 @@ import { FilterPage } from "../filter/filter";
 })
 export class HomePage {
   filter: string = 'projects';
-  showSubmenu: any;
-  category: Array<any> = [];
+  test: any;
+
+  key: string = 'children';
+  accounts: Array<any>;
+  data: Array<any> = [{
+    name: "สินทรัพย์",
+    accountno: 1000000,
+    parent: null,
+    status: "active",
+  },
+  {
+    name: "สินทรัพย์ 1.1",
+    accountno: 1100000,
+    parent: 1000000,
+    status: "active"
+  },
+  {
+    name: "หนี้สิน",
+    accountno: 2000000,
+    parent: null,
+    status: "active"
+  },
+  {
+    name: "หนี้สิน 2.1",
+    accountno: 2100000,
+    parent: 2000000,
+    status: "active"
+  },
+  {
+    name: "หนี้สิน 2.1.1",
+    accountno: 2110000,
+    parent: 2100000,
+    status: "active"
+  },
+  {
+    name: "หนี้สิน 2.2",
+    accountno: 2200000,
+    parent: 2000000,
+    status: "active"
+  },
+  {
+    name: "หนี้สิน 2.2.1",
+    accountno: 2210000,
+    parent: 2200000,
+    status: "active"
+  },
+  {
+    name: "หนี้สิน 2.2.2",
+    accountno: 2220000,
+    parent: 2200000,
+    status: "active"
+  },
+  {
+    name: "หนี้สิน 2.2.2.1",
+    accountno: 2221000,
+    parent: 2220000,
+    status: "active"
+  },
+  {
+    name: "หนี้สิน 2.2.2.1.1",
+    accountno: 2221100,
+    parent: 2221000,
+    status: "active"
+  }]
   constructor(public navCtrl: NavController) {
-    let data = {
-      name: 'หมวดหมู่ใหญ่',
-      showSubmenu: false,
-      sub: [{
-        name: 'หมวดหมู่ย่อยv1',
-        showSubmenu: false,
-        sub: [{
-          name: 'หมวดหมู่ย่อยv2',
-          showSubmenu: false,
-          sub: [{
-            name: 'หมวดหมู่ย่อยv3',
-            showSubmenu: false
-          }]
-        }]
-      },
-      {
-        name: 'หมวดหมู่ย่อย'
-      },
-      {
-        name: 'หมวดหมู่ย่อย'
-      }]
-    }
-    this.category.push(data);
-    // let data = [{
-    //   name: 'หมวดหมู่ใหญ่1',
-    //   accno: 10000,
-    //   parent: null
-    // }, {
-    //   name: 'หมวดหมู่ใหญ่2',
-    //   accno: 20000,
-    //   parent: null
-    // }, {
-    //   name: 'หมวดหมู่ใหญ่1-1',
-    //   accno: 11000,
-    //   parent: 10000
-    // }, {
-    //   name: 'หมวดหมู่ใหญ่1-1-1',
-    //   accno: 11100,
-    //   parent: 11000
-    // }, {
-    //   name: 'หมวดหมู่ใหญ่1-1-1-1',
-    //   accno: 11110,
-    //   parent: 11100
-    // }]
-    // this.category = data;
+    this.accounts = this.listToTree(this.data);
   }
+
+  
+  listToTree(data) {
+    var ID_KEY = 'accountno';
+    var PARENT_KEY = 'parent';
+    var CHILDREN_KEY = 'children';
+
+    var tree = [],
+      childrenOf = {};
+    var item, id, parentId;
+
+    for (var i = 0, length = data.length; i < length; i++) {
+      item = data[i];
+      id = item[ID_KEY];
+      parentId = item[PARENT_KEY] || 0;
+      // every item may have children
+      childrenOf[id] = childrenOf[id] || [];
+      // init its children
+      item[CHILDREN_KEY] = childrenOf[id];
+      if (parentId != 0) {
+        // init its parent's children object
+        childrenOf[parentId] = childrenOf[parentId] || [];
+        // push it into its parent's children object
+        childrenOf[parentId].push(item);
+      } else {
+        tree.push(item);
+      }
+    };
+
+    return tree;
+  }
+
+
   gotoLogin() {
     this.navCtrl.push(LoginPage);
   }
