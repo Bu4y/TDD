@@ -29,14 +29,14 @@
     <ion-item (click)="today()">
       <ion-icon name="ios-calendar-outline" item-start></ion-icon>
       Today
-      <p item-end>1</p>
+      <p item-end>{{dashdata.today}}</p>
     </ion-item>
     <ion-item (click)="nextweek()">
       <ion-icon name="ios-calendar-outline" item-start>
         <p class="custom-next7day">+7</p>
       </ion-icon>
       Next 7 Days
-      <p item-end>7</p>
+      <p item-end>{{dashdata.next7days}}</p>
     </ion-item>
   </ion-list>
 
@@ -50,11 +50,9 @@
       </ion-segment-button>
     </ion-segment>
   </div>
-      {{test}}
-  
   <div [ngSwitch]="filter">
     <ion-list *ngSwitchCase="'projects'">
-      <ui-tree [data]="accounts" [key]="key" [selectItem]="test"></ui-tree>
+      <ui-tree [data]="accounts" [key]="key"></ui-tree>
       <ion-fab left bottom (click)="newproject()">
         <button ion-fab><ion-icon name="add"></ion-icon></button>
       </ion-fab>

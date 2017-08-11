@@ -11,7 +11,7 @@
     <ui-tree *ngIf="item[key].length && item.expand == true" [key]="key" [data]="item[key]"></ui-tree>
   </div>
 </div> -->
-<div class="just-padding" *ngIf="items.length">
+<div class="just-padding">
 
   <div *ngFor="let item of items" (click)="clickItem(item)">
     <button ion-item>
