@@ -26,6 +26,7 @@ import { TeacherlistServiceProvider } from '../pages/teacherlist/teacherlist-ser
 import { NewprojectServiceProvider } from '../pages/newproject/newproject-service';
 import { FilterServiceProvider } from '../pages/filter/filter-service';
 import { RegisterPage } from "../pages/register/register";
+import { UiTreeComponent } from "../components/ui-tree/ui-tree";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { RegisterPage } from "../pages/register/register";
     TeacherlistPage,
     NewprojectPage,
     FilterPage,
-    RegisterPage
+    RegisterPage,
+    UiTreeComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import { RegisterPage } from "../pages/register/register";
     TeacherlistPage,
     NewprojectPage,
     FilterPage,
-    RegisterPage
+    RegisterPage,
+    UiTreeComponent
   ],
   providers: [
     StatusBar,
