@@ -23,19 +23,20 @@ export class HomePage {
 
   key: string = 'children';
   accounts: Array<any>;
-  // data: Array<any>;
   constructor(public navCtrl: NavController, public homeService: HomeServiceProvider, public loadingCtrl: LoadingController, public modalCtrl: ModalController) {
     this.loading = this.loadingCtrl.create();
     this.homeService
       .getdata()
       .then(data => {
         this.dashdata = data;
-        // this.data = data.project;
         this.accounts = this.listToTree(data.project);
         this.loading.dismiss();
       })
   }
-
+  presentProfileModal() {
+    let profileModal = this.modalCtrl.create(NextweekPage, { userId: 8675309 });
+    profileModal.present();
+  }
 
   listToTree(data) {
     var ID_KEY = 'accountno';
