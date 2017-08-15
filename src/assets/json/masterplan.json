@@ -1,4 +1,4 @@
-[
+{"plan":[
     {
         "name": "หลักสูตรภาษาไทย 1",
         "amountdate": [
@@ -62,4 +62,69 @@
             }
         ]
     }
+],
+"parent":[
+    {
+        "name" :"โครงการพัฒนาทักษะทางวิชาชีพ",
+        "accountno" : 1000,
+        "parent" : null,
+        "status" : "active"
+
+    } ,{
+        "name" :"หลักสูตรภาษาอังกฤษเพื่อความสื่อสาร",
+        "accountno" : 1100,
+        "parent" : 1000,
+        "status" : "active"
+
+    },{
+        "name" :"โครงการวัดสมรรถนะทางวิชาชีพคอมพิวเตอร์",
+        "accountno" : 2000,
+        "parent" : null,
+        "status" : "active"
+
+    },{
+        "name" :"หลักสูตรนักวิเคราะห์และออกแบบระบบ",
+        "accountno" : 2100,
+        "parent" :2000 ,
+        "status" : "active"
+
+    },{
+        "name" :"หลักสูตรนักพัฒนาระบบ",
+        "accountno" : 2200,
+        "parent" :2100 ,
+        "status" : "active"
+
+    },{
+        "name" :"โครงการดนตรีขั้นพื้นฐาน",
+        "accountno" : 3000,
+        "parent" :null ,
+        "status" : "active"
+
+    },{
+        "name" :"หลักสูตรสอนกีตาร์ไฟฟ้าเบื้องต้น",
+        "accountno" : 3100,
+        "parent" : 3000,
+        "status" : "active"
+
+    },{
+        "name" :"หลักสูตรสอนกีตาร์ไฟฟ้า",
+        "accountno" : 3200,
+        "parent" : 3100,
+        "status" : "active"
+
+    },{
+        "name" :"หลักสูตรสอนกีตาร์ไฟฟ้าขั้นสูง",
+        "accountno" : 3300,
+        "parent" : 3100,
+        "status" : "active"
+
+    },{
+        "name" :"โครงการเสริมสร้างบุคลิกภาพ",
+        "accountno" : 4000,
+        "parent" : null,
+        "status" : "active"
+
+    }  
 ]
+
+}
