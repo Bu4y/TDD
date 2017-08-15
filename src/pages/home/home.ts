@@ -7,6 +7,7 @@ import { NextweekPage } from "../nextweek/nextweek";
 import { NewprojectPage } from "../newproject/newproject";
 import { FilterPage } from "../filter/filter";
 import { dashModel } from "./home-model";
+import { userLoginModel } from "./home-model";
 import { project } from "./home-model";
 
 import { HomeServiceProvider } from "./home-service";
@@ -20,6 +21,7 @@ export class HomePage {
   test: any;
   loading: any;
   dashdata: dashModel = new dashModel();
+  user: userLoginModel = new userLoginModel();
 
   key: string = 'children';
   accounts: Array<any>;
@@ -32,6 +34,9 @@ export class HomePage {
         this.accounts = this.listToTree(data.project);
         this.loading.dismiss();
       })
+    this.user = JSON.parse(this.homeService.getUser()._body);
+    console.log(this.user);
+
   }
   presentProfileModal() {
     let profileModal = this.modalCtrl.create(NextweekPage, { userId: 8675309 });

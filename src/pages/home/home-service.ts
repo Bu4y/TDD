@@ -5,6 +5,9 @@ import 'rxjs/add/operator/toPromise';
 
 import { dashModel } from "./home-model";
 
+import { Constants } from "../../app/app.constants";
+
+
 /*
   Generated class for the HomeServiceProvider provider.
 
@@ -19,11 +22,22 @@ export class HomeServiceProvider {
   }
 
   getdata(): Promise<dashModel> {
-    return this.http.get('./assets/json/dashboard.json')
+    return this.http.get(Constants.URL + 'api/getdashboard')
       .toPromise()
       .then(response => response.json() as dashModel)
       .catch(this.handleError);
   }
+
+  getUser() {
+    return JSON.parse(window.localStorage.getItem('tdduser'));
+  }
+
+  // getdata(): Promise<dashModel> {
+  //   return this.http.get('./assets/json/dashboard.json')
+  //     .toPromise()
+  //     .then(response => response.json() as dashModel)
+  //     .catch(this.handleError);
+  // }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only

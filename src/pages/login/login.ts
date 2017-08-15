@@ -35,7 +35,6 @@ export class LoginPage {
 
   }
   login() {
-    console.log(this.credential);
     this.logService
       .login(this.credential)
       .then(data => {
