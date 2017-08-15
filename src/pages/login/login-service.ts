@@ -18,10 +18,13 @@ export class LoginServiceProvider {
     console.log('Hello LoginServiceProvider Provider');
   }
 
-  login(): Promise<userLoginModel> {
-    return this.http.get('../../assets/json/user.json')
+  login(credential): Promise<userLoginModel> {
+    return this.http.post(Constants.URL + 'api/auth/signin', credential)
       .toPromise()
-      .then(response => response.json() as userLoginModel)
+      .then(response => {
+        window.localStorage.setItem('tdduser', JSON.stringify(response));
+        response.json() as userLoginModel
+      })
       .catch(this.handleError);
   }
 

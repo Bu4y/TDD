@@ -34,14 +34,18 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
 
   }
-  login(data) {
+  login() {
+    console.log(this.credential);
     this.logService
-      .login()
+      .login(this.credential)
       .then(data => {
-        this.user = data;
         this.loading.dismiss();
         this.navCtrl.push(HomePage);
+      }, err => {
+        let error = JSON.parse(err._body);
+        alert(error.message);
       })
+
   }
 
   register() {

@@ -10,7 +10,7 @@ import { SettingPage } from "../pages/setting/setting";
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = SettingPage;
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

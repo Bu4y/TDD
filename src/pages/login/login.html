@@ -36,11 +36,11 @@
       <ion-col col-12>
         <ion-item>
           <ion-label>Username</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input [(ngModel)]="credential.username" type="text"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label>Password</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input [(ngModel)]="credential.password" type="password"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>

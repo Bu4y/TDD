@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 
 import { LoginPage } from "../login/login";
 import { registerModel } from "./register-model";
+import { RegisterServiceProvider } from "./register-service";
 /**
  * Generated class for the RegisterPage page.
  *
@@ -18,7 +19,7 @@ import { registerModel } from "./register-model";
 export class RegisterPage {
   regit: registerModel = new registerModel();
   loading: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public regitService: RegisterServiceProvider) {
     this.loading = this.loadingCtrl.create();
   }
 
@@ -28,7 +29,15 @@ export class RegisterPage {
 
   regiter() {
     // alert(JSON.stringify(this.regit));
-    this.navCtrl.push(LoginPage);
+    this.regitService
+      .register(this.regit)
+      .then(data => {
+        this.loading.dismiss();
+        this.navCtrl.push(LoginPage);
+      }, err => {
+        let error = JSON.parse(err._body);
+        alert(error.message);
+      })
   }
 
   cancel() {
