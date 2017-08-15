@@ -14,12 +14,112 @@
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img class="image-profile1" src="assets/userprofile.jpg">
+      </ion-avatar>
+      <h2>Kanitthakan</h2>
+    </ion-item>
+  </ion-list>
 
-<!-- Ranges -->
-<ion-item>
-  <ion-range [(ngModel)]="brightness">
-    <ion-icon range-left small name="sunny"></ion-icon>
-    <ion-icon range-right name="sunny"></ion-icon>
-  </ion-range>
-</ion-item>
+  <!-- karma -->
+  <ion-item>
+    <ion-label stacked color="danger">Karma</ion-label>
+    <ion-select [(ngModel)]="Karma">
+      <ion-option value="sun">Sunday</ion-option>
+      <ion-option value="mon">Monday</ion-option>
+      <ion-option value="tue">Tuesday</ion-option>
+      <ion-option value="wed">Wednesday</ion-option>
+      <ion-option value="thu">Thursday</ion-option>
+      <ion-option value="fri">Friday</ion-option>
+      <ion-option value="sat">Saturday</ion-option>
+      <ion-option value="mon-fri">Monday-Friday</ion-option>
+      <ion-option value="sun,sat">Sunday,Saturday</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <!-- Completed last 7 days -->
+  <ion-list>
+    <ion-list-header>
+      Completed last 7 days
+    </ion-list-header>
+    <ion-item>
+      <p> Sun : 0 </p>
+      <p>Mon : 0 </p>
+      <p>Tuesday : 0 </p>
+      <p>Wednesday: 0</p>
+      <p>Thursday : 0</p>
+      <p>Friday : 0</p>
+      <p>Saturday : 0</p>
+    </ion-item>
+
+    <!-- Completed last 4 weeks -->
+    <ion-list-header>
+      Completed last 4 weeks
+    </ion-list-header>
+    <ion-item>
+      <p>This breakdown of Completed tasks is a </p>
+      <p> Premium feature.Upgrade now!! </p>
+    </ion-item>
+
+    <!-- Daily streak -->
+
+    <ion-row padding>
+      <ion-col col-3>
+      </ion-col>
+
+      <ion-col col-6>
+        <h4 class="text-center">Daily streak</h4>
+        <p class="text-center"> 0 days </p>
+      </ion-col>
+
+      <ion-col col-3>
+      </ion-col>
+    </ion-row>
+
+
+
+
+
+
+
+
+
+  </ion-list>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ion-content>
