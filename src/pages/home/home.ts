@@ -11,6 +11,7 @@ import { userLoginModel } from "./home-model";
 import { project } from "./home-model";
 import { SettingPage } from "../setting/setting";
 import { ProfilePage } from "../profile/profile";
+import { NotiPage } from "../noti/noti";
 
 import { HomeServiceProvider } from "./home-service";
 
@@ -106,5 +107,9 @@ export class HomePage {
 
   profile(){
     this.navCtrl.push(ProfilePage);
+  }
+
+  noti(){
+    this.navCtrl.push(NotiPage);
   }
 }
