@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+
+import { TeacherselectPage } from "../teacherselect/teacherselect";
+import { NewprojectServiceProvider } from "./newproject-service";
+import { getDataNewProject } from "./newproject-model";
+import { newprojectModel } from "./newproject-model";
 /**
  * Generated class for the NewprojectPage page.
  *
@@ -13,16 +18,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'newproject.html',
 })
 export class NewprojectPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  data: getDataNewProject = new getDataNewProject();
+  loading: any;
+  newproject: newprojectModel = new newprojectModel();
+  constructor(public navCtrl: NavController, public navParams: NavParams, public newService: NewprojectServiceProvider, public loadingCtrl: LoadingController) {
+    this.loading = this.loadingCtrl.create();
+    this.newService.getdata().then(data => {
+      this.data = data;
+      this.loading.dismiss();
+    });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewprojectPage');
   }
 
-  gohome(){
+  gohome() {
     this.navCtrl.pop();
+  }
+
+  collaborators() {
+    this.navCtrl.push(TeacherselectPage);
+  }
+
+  save(){
+    console.log(this.newproject);
   }
 
 }

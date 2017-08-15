@@ -38,7 +38,6 @@ export class HomePage {
         this.loading.dismiss();
       })
     this.user = JSON.parse(this.homeService.getUser()._body);
-    console.log(this.user);
 
   }
   presentProfileModal() {

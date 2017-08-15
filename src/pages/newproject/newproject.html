@@ -18,40 +18,36 @@
 
     <ion-item>
       <ion-label stacked color="danger">Name</ion-label>
-      <ion-input type="text" color="danger"></ion-input>
+      <ion-input type="text" [(ngModel)]="newproject.name" color="danger"></ion-input>
     </ion-item>
 
     <!-- MasterPlan -->
     <ion-item>
       <ion-label stacked color="danger">MasterPlan</ion-label>
-      <ion-select [(ngModel)]="MasterPlan">
-        <ion-option value="f">1</ion-option>
-        <ion-option value="m">2</ion-option>
-        <ion-option value="n">3</ion-option>
+      <ion-select [(ngModel)]="newproject.plan">
+        <ion-option *ngFor="let plan of data.plans" [value]="plan">{{plan.name}}</ion-option>
       </ion-select>
     </ion-item>
 
     <!-- Teacher -->
     <ion-item>
       <ion-label stacked color="danger">Parent</ion-label>
-      <ion-select [(ngModel)]="Parent">
-        <ion-option value="f">Project1</ion-option>
-        <ion-option value="m">Project2</ion-option>
-        <ion-option value="n">Project3</ion-option>
+      <ion-select [(ngModel)]="newproject.parent">
+        <ion-option *ngFor="let parent of data.parent" value="{{parent.name}}">{{parent.name}}</ion-option>
       </ion-select>
     </ion-item>
 
     <!--Add collaborators  -->
-    <ion-item>
+    <ion-item (tap)="collaborators()">
       <ion-label stacked color="danger">Collaborators</ion-label>
-      <ion-input type="text" color="danger"></ion-input>
+      <ion-input type="text" [disabled]="true" color="danger"></ion-input>
     </ion-item>
 
 
   </ion-list>
   <ion-row padding>
     <ion-col col-6>
-      <button ion-button block outline (click)="gohome()">Submit</button>
+      <button ion-button block outline (click)="save()">Submit</button>
     </ion-col>
     <ion-col col-6>
       <button ion-button block outline (click)="gohome()">Cancel</button>
