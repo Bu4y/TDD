@@ -9,6 +9,8 @@ import { FilterPage } from "../filter/filter";
 import { dashModel } from "./home-model";
 import { userLoginModel } from "./home-model";
 import { project } from "./home-model";
+import { SettingPage } from "../setting/setting";
+import { ProfilePage } from "../profile/profile";
 
 import { HomeServiceProvider } from "./home-service";
 
@@ -96,5 +98,13 @@ export class HomePage {
 
   menuItemHandler(item, object) {
     item.showSubmenu = item.showSubmenu ? false : true;
+  }
+
+  setting(){
+    this.navCtrl.push(SettingPage);
+  }
+
+  profile(){
+    this.navCtrl.push(ProfilePage);
   }
 }

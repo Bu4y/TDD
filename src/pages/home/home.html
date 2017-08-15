@@ -8,7 +8,7 @@
     <ion-title>
       <ion-grid>
         <ion-row>
-          <ion-col col-3>
+          <ion-col col-3 (click)="profile()">
             <img class="image-profile" src="{{user.profileImageURL}}" alt="">
           </ion-col>
         <ion-col col-9>{{user.displayName}}</ion-col>
@@ -17,7 +17,7 @@
       </ion-grid>
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only color="royal" (click)="gotoLogin()">
+      <button ion-button icon-only color="royal" (click)="setting()">
         <ion-icon name="ios-settings-outline"></ion-icon>
       </button>
     </ion-buttons>
