@@ -29,13 +29,20 @@
       </ion-select>
     </ion-item>
 
-    <!-- Teacher -->
+    <!-- Parent -->
     <ion-item>
       <ion-label stacked color="danger">Parent</ion-label>
       <ion-select [(ngModel)]="newproject.parent">
         <ion-option *ngFor="let parent of data.parent" value="{{parent.name}}">{{parent.name}}</ion-option>
       </ion-select>
     </ion-item>
+
+    <!-- startdate -->
+    <ion-item>
+      <ion-label stacked color="danger">StartDate</ion-label>
+      <ion-input type="Date" [(ngModel)]="newproject.name" color="danger"></ion-input>
+    </ion-item>
+
 
     <!--Add collaborators  -->
     <ion-item (tap)="collaborators()">
