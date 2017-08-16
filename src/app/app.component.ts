@@ -7,9 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from "../pages/login/login";
 import { SettingPage } from "../pages/setting/setting";
 import { ProfilePage } from "../pages/profile/profile";
-
 import { NotiPage } from "../pages/noti/noti";
-
 import { TeacherlistPage } from "../pages/teacherlist/teacherlist";
 
 @Component({
@@ -17,7 +15,7 @@ import { TeacherlistPage } from "../pages/teacherlist/teacherlist";
 })
 export class MyApp {
 
-  rootPage: any = NotiPage;
+  rootPage: any = TeacherlistPage;
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
