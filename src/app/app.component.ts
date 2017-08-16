@@ -7,13 +7,13 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from "../pages/login/login";
 import { SettingPage } from "../pages/setting/setting";
 import { ProfilePage } from "../pages/profile/profile";
-
+import { TeacherlistPage } from "../pages/teacherlist/teacherlist";
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = LoginPage;
+  rootPage: any = TeacherlistPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
