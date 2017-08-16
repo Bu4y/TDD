@@ -14,14 +14,18 @@
 
 
 <ion-content padding>
-  <ion-item>
-  <ion-label>Daenerys Targaryen</ion-label>
+  <!-- <ion-item>
+  <ion-label ng>Daenerys Targaryen</ion-label>
   <ion-checkbox color="dark" checked="true"></ion-checkbox>
-</ion-item>
+</ion-item> -->
+
 
 <ion-item>
-  <ion-label>Arya Stark</ion-label>
-  <ion-checkbox ></ion-checkbox>
+  <ion-label stacked color="danger">Teacher</ion-label> 
+  <ion-checkbox  color="dark" checked="true" [(ngModel)]="">
+        <ion-option *ngFor="" value="{{}}">{}}</ion-option>
+      </ion-checkbox>
+ 
 </ion-item>
 
 </ion-content>
