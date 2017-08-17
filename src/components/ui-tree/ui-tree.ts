@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the UiTreeComponent component.
@@ -44,10 +44,17 @@ export class UiTreeComponent {
   @Input('data') items: Array<Object>;
   @Input('key') key: string;
   @Input('selectItem') callback: any;
+  @Output() UiTreeCallback = new EventEmitter();
   clickItem(item) {
     window.event.stopPropagation();
     item.expand = item.expand ? false : true;
-    this.callback = item;
   }
 
+  sentData(item) {
+    this.UiTreeCallback.emit(item);
+  }
+
+  gotoEdit(item) {
+    this.UiTreeCallback.emit(item);
+  }
 }

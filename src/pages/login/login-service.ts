@@ -19,7 +19,7 @@ export class LoginServiceProvider {
   }
 
   login(credential): Promise<userLoginModel> {
-    return this.http.post(Constants.URL + 'api/auth/signin', credential)
+    return this.http.get('./assets/json/user.json')
       .toPromise()
       .then(response => {
         window.localStorage.setItem('tdduser', JSON.stringify(response));

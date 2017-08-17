@@ -13,12 +13,12 @@
 </div> -->
 <div class="just-padding">
 
-  <div *ngFor="let item of items" (click)="clickItem(item)">
-    <button ion-item>
-      <ion-icon name="ios-arrow-dropright-outline" item-start *ngIf="!item.expand && item[key].length"></ion-icon>
-      <ion-icon name="ios-arrow-dropdown-outline" item-start *ngIf="item.expand && item[key].length"></ion-icon>
+  <div *ngFor="let item of items">
+    <button ion-item (click)="sentData(item)">
+      <ion-icon name="ios-arrow-dropright-outline" item-end *ngIf="!item.expand && item[key].length" (click)="clickItem(item)"></ion-icon>
+      <ion-icon name="ios-arrow-dropdown-outline" item-end *ngIf="item.expand && item[key].length" (click)="clickItem(item)"></ion-icon>
       {{item.name}}
         </button>
-    <ui-tree *ngIf="item[key].length && item.expand == true" [key]="key" [data]="item[key]"></ui-tree>
+    <ui-tree *ngIf="item[key].length && item.expand == true" [key]="key" [data]="item[key]" (UiTreeCallback)="gotoEdit($event)"></ui-tree>
   </div>
 </div>

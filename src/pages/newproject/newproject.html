@@ -47,9 +47,9 @@
     <!--Add collaborators  -->
     <ion-item (tap)="collaborators()">
       <ion-label stacked color="danger">Collaborators</ion-label>
-      <ion-input type="text" [disabled]="true" color="danger"></ion-input>
+      <ion-input type="text" [disabled]="true" [(ngModel)]="detailteacherlist" color="danger"></ion-input>
     </ion-item>
-
+{{tt}}
 
   </ion-list>
   <ion-row padding>

@@ -6,4 +6,5 @@ export class listTeacher {
     profileImageURL: string;
     displayName: string;
     username: string;
+    checked: boolean;
 }

@@ -29,15 +29,15 @@ export class RegisterPage {
 
   regiter() {
     // alert(JSON.stringify(this.regit));
-    this.regitService
-      .register(this.regit)
-      .then(data => {
-        this.loading.dismiss();
-        this.navCtrl.push(LoginPage);
-      }, err => {
-        let error = JSON.parse(err._body);
-        alert(error.message);
-      })
+    // this.regitService
+    //   .register(this.regit)
+    //   .then(data => {
+    //     this.loading.dismiss();
+    this.navCtrl.push(LoginPage);
+    // }, err => {
+    //   let error = JSON.parse(err._body);
+    //   alert(error.message);
+    // })
   }
 
   cancel() {

@@ -100,15 +100,19 @@ export class HomePage {
     item.showSubmenu = item.showSubmenu ? false : true;
   }
 
-  setting(){
+  setting() {
     this.navCtrl.push(SettingPage);
   }
 
-  profile(){
+  profile() {
     this.navCtrl.push(ProfilePage);
   }
 
-  noti(){
+  noti() {
     this.navCtrl.push(NotiPage);
+  }
+
+  gotoEdit(item) {
+    console.log(item);
   }
 }

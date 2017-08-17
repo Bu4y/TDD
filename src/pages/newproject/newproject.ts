@@ -5,6 +5,7 @@ import { TeacherselectPage } from "../teacherselect/teacherselect";
 import { NewprojectServiceProvider } from "./newproject-service";
 import { getDataNewProject } from "./newproject-model";
 import { newprojectModel } from "./newproject-model";
+import { teacher } from "./newproject-model";
 /**
  * Generated class for the NewprojectPage page.
  *
@@ -19,6 +20,8 @@ import { newprojectModel } from "./newproject-model";
 })
 export class NewprojectPage {
   data: getDataNewProject = new getDataNewProject();
+  teacherlist: Array<teacher> = [];
+  detailteacherlist: string = '';
   loading: any;
   newproject: newprojectModel = new newprojectModel();
   constructor(public navCtrl: NavController, public navParams: NavParams, public newService: NewprojectServiceProvider, public loadingCtrl: LoadingController) {
@@ -27,8 +30,16 @@ export class NewprojectPage {
       this.data = data;
       this.loading.dismiss();
     });
+    this.teacherlist = this.newService.getTeachers();
+    this.newproject.teacher = this.teacherlist;
+    this.detailteacherlist = this.teacherlist ? this.teacherlist.length + ' คน' : '';
   }
-
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter');
+    this.teacherlist = this.newService.getTeachers();
+    this.newproject.teacher = this.teacherlist;
+    this.detailteacherlist = this.teacherlist ? this.teacherlist.length + ' คน' : '';
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewprojectPage');
   }
@@ -41,8 +52,10 @@ export class NewprojectPage {
     this.navCtrl.push(TeacherselectPage);
   }
 
-  save(){
+  save() {
     console.log(this.newproject);
+    window.localStorage.removeItem('teacherlist');
+    this.navCtrl.pop();
   }
 
 }
