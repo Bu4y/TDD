@@ -24,7 +24,7 @@
     <!-- MasterPlan -->
     <ion-item>
       <ion-label stacked color="danger">MasterPlan</ion-label>
-      <ion-select [(ngModel)]="newproject.plan">
+      <ion-select [(ngModel)]="newproject.masterplan">
         <ion-option *ngFor="let plan of data.plans" [value]="plan">{{plan.name}}</ion-option>
       </ion-select>
     </ion-item>
@@ -40,7 +40,7 @@
     <!-- startdate -->
     <ion-item>
       <ion-label stacked color="danger">StartDate</ion-label>
-      <ion-input type="Date" [(ngModel)]="newproject.name" color="danger"></ion-input>
+      <ion-input type="Date" [(ngModel)]="newproject.startdate" color="danger"></ion-input>
     </ion-item>
 
 

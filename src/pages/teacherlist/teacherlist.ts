@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { listTeacher } from "./teacherlist-model";
+import { TeacherlistServiceProvider } from "./teacherlist-service";
 /**
  * Generated class for the TeacherlistPage page.
  *
@@ -14,12 +15,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'teacherlist.html',
 })
 export class TeacherlistPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  listTeacher: Array<listTeacher>;
+  loading: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public teacherService: TeacherlistServiceProvider, public loadingCtrl: LoadingController) {
+    this.loading = this.loadingCtrl.create();
+    this.teacherService.getdata().then(data => {
+      this.listTeacher = data;
+      this.loading.dismiss();
+    });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TeacherlistPage');
+  }
+
+  teacher(item){
+    alert(item);
   }
 
 }

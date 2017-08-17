@@ -14,15 +14,13 @@
 
 
 <ion-content padding>
- 
 
+  <ion-item *ngFor="let teach of listTeacher" (click)="teacher(teach)">
+    <ion-label stacked color="danger">{{teach.displayName}}</ion-label>
+    <ion-checkbox color="dark">
+      <ion-option></ion-option>
+    </ion-checkbox>
 
- <ion-item>
-  <ion-label stacked color="danger">Teacher</ion-label> 
-  <ion-checkbox  color="dark" checked="true" >
-        <ion-option ></ion-option>
-      </ion-checkbox>
- 
-</ion-item> 
+  </ion-item>
 
 </ion-content>

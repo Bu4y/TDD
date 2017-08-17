@@ -1,9 +1,19 @@
 export class newprojectModel {
     name: string;
-    plan: plan = new plan();
+    masterplan: plan = new plan();
     parent: string;
-    teacher: number;
-    startdate :Date;
+    teacher: Array<teacher>;
+    startdate: Date;
+}
+
+export class teacher {
+    username: string;
+    firstName: string;
+    lastName: string;
+    displayName: string;
+    email: string;
+    tel: string;
+    profileImageURL: string;
 }
 
 export class plan {

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { TeacherlistPage } from "../teacherlist/teacherlist";
+
 /**
  * Generated class for the TeacherselectPage page.
  *
@@ -20,6 +22,10 @@ export class TeacherselectPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TeacherselectPage');
+  }
+
+  teacherlist() {
+    this.navCtrl.push(TeacherlistPage);
   }
 
 }
