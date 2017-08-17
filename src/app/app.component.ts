@@ -14,7 +14,6 @@ import { TeacherlistPage } from "../pages/teacherlist/teacherlist";
   templateUrl: 'app.html'
 })
 export class MyApp {
-
   rootPage: any = HomePage;
 
 
