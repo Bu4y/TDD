@@ -15,7 +15,7 @@ import { TeacherlistPage } from "../pages/teacherlist/teacherlist";
 })
 export class MyApp {
 
-  rootPage: any = TeacherlistPage;
+  rootPage: any =SettingPage;
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
